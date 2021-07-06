@@ -1,0 +1,29 @@
+domains:
+  - hosts:
+      - localhost
+      - 127.0.0.1
+    gTag: ""
+    gAd: ""
+    adsTxt: ""
+    theme: default
+    title: "免费梯子 | 免费翻墙"
+    description: "免费梯子,免费梯子,免费梯子,免费梯子,免费梯子"
+    keyWords: "免费梯子,免费梯子,免费梯子,免费梯子,免费梯子,免费梯子"
+    html: ""
+    copyright: ""
+    siteMap: ""
+
+web:
+  addr: "127.0.0.1"
+  port: "9100"
+  forceHttps: false
+  staticDir: "./static"
+  templateDir: "./template"
+  enableCache: false
+  cacheDirectory: "./cache"
+  cacheDuration: "30s"
+
+updater:
+  duration: 4h
+  cachePath: "./cache/config.json"
+  lastRunTimeFile: "./cache/last.txt"

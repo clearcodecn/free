@@ -3,6 +3,7 @@ package controller
 import (
 	"fmt"
 	"free/pkg/ext"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
@@ -24,7 +25,21 @@ func renderError(ctx *gin.Context, err error) {
 	})
 }
 
-func render(ctx *gin.Context, code int, tpl string, data interface{}) {
+func render(ctx *gin.Context, code int, tpl string, data gin.H) {
 	cfg := ext.DomainConfig(ctx)
+	data["Host"] = getFullHost(ctx)
 	ctx.HTML(code, fmt.Sprintf("%s/%s", cfg.Theme, tpl), data)
+}
+
+func getFullHost(ctx *gin.Context) string {
+	var (
+		host string
+	)
+	if h := ctx.Request.Host; h != "" {
+		host = strings.Split(h, ":")[0]
+	}
+	if host == "" || host == "127.0.0.1" || host == "localhost" {
+		host = ctx.Request.Host
+	}
+	return fmt.Sprintf("//%s", host)
 }

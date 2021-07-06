@@ -61,11 +61,10 @@ type AllConfig struct {
 }
 
 type Config struct {
-	Domains    []*Domain          `yaml:"domains"`
-	ConfigJSON string             `yaml:"configJson"`
-	domains    map[string]*Domain `yaml:"domains"`
-	Web        Web                `yaml:"web"`
-	Updater    Updater            `yaml:"updater"`
+	Domains []*Domain          `yaml:"domains"`
+	domains map[string]*Domain `yaml:"domains"`
+	Web     Web                `yaml:"web"`
+	Updater Updater            `yaml:"updater"`
 }
 
 type Domain struct {
@@ -141,4 +140,5 @@ type Updater struct {
 	Duration        string `json:"duration" yaml:"duration"`
 	LastRunTimeFile string `json:"lastRunTimeFile" yaml:"lastRunTimeFile"`
 	CachePath       string `json:"cachePath" yaml:"cachePath"`
+	Ip2Region       string `json:"ip2Region"  yaml:"ip2Region"`
 }

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"free/config"
 	"free/internal/http"
+	"free/pkg/ip"
 	"free/pkg/service"
 	"free/pkg/updater"
 	http2 "net/http"
@@ -30,13 +31,15 @@ func init() {
 	}
 	fmt.Println(fmt.Sprintf("%+v", config.GetConfig()))
 	service.InitService(config.GetConfig().Updater.CachePath, dur)
+
+	ip.InitIPDB(config.GetConfig().Updater.Ip2Region)
 }
 
 func main() {
 	/**
 	本地调试，加代理.
 	*/
-	os.Setenv("https_proxy", "http://localhost:1087")
+	os.Setenv("https_proxy", "socks5://localhost:1080")
 
 	g.Go(func() error {
 		if err := http.Serve(); err != nil {

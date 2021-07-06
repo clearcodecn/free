@@ -27,3 +27,4 @@ updater:
   duration: 4h
   cachePath: "./cache/config.json"
   lastRunTimeFile: "./cache/last.txt"
+  ip2Region: ./cache/ip2region.db

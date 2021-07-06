@@ -73,6 +73,9 @@ func initRouter(r *gin.Engine) error {
 	r.Use(ext.WithDomainConfig())
 
 	r.GET("/", controller.IndexHandler)
+	r.GET("/detail/*id", controller.IndexHandler)
+
+
 	r.NoRoute(ext.NotFoundHandler())
 
 	ext.GoogleAdsTxt(r)

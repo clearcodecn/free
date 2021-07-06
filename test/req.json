@@ -1,0 +1,91 @@
+{
+  "ProtoMajor": 1,
+  "ProtoMinor": 0,
+  "header": {
+    "Accept": [
+      "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+    ],
+    "Accept-Encoding": [
+      "gzip"
+    ],
+    "Accept-Language": [
+      "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"
+    ],
+    "Cache-Control": [
+      "max-age=0"
+    ],
+    "Cdn-Loop": [
+      "cloudflare"
+    ],
+    "Cf-Connecting-Ip": [
+      "118.113.64.249"
+    ],
+    "Cf-Ipcountry": [
+      "CN"
+    ],
+    "Cf-Ray": [
+      "66a9a7e8fac60d20-LAX"
+    ],
+    "Cf-Visitor": [
+      "{\"scheme\":\"https\"}"
+    ],
+    "Connection": [
+      "close"
+    ],
+    "Cookie": [
+      "__gads=ID=dc4aa20e2206cdd1-220a94a095c70006:T=1621004123:RT=1621004123:S=ALNI_MYR4BCNPl8YsYVQLv9TfClENgFUkw; UM_distinctid=1796b6852bf375-053caf23dc3d57-2363163-1fa400-1796b6852c0bd6; _ga=GA1.1.547421665.1622468434; _ga_B1CWP4G9GW=GS1.1.1622468434.1.1.1622468844.0"
+    ],
+    "Referer": [
+      "https://ping.yunjisms.xyz/"
+    ],
+    "Sec-Ch-Ua": [
+      "\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\""
+    ],
+    "Sec-Ch-Ua-Mobile": [
+      "?0"
+    ],
+    "Sec-Fetch-Dest": [
+      "document"
+    ],
+    "Sec-Fetch-Mode": [
+      "navigate"
+    ],
+    "Sec-Fetch-Site": [
+      "same-origin"
+    ],
+    "Sec-Fetch-User": [
+      "?1"
+    ],
+    "Upgrade-Insecure-Requests": [
+      "1"
+    ],
+    "User-Agent": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    ],
+    "X-Forwarded-For": [
+      "118.113.64.249, 172.69.35.86"
+    ],
+    "X-Forwarded-Proto": [
+      "http"
+    ],
+    "X-Real-Ip": [
+      "172.69.35.86"
+    ]
+  },
+  "host": "ping.yunjisms.xyz",
+  "proto": "HTTP/1.0",
+  "remoteAddr": "127.0.0.1:48258",
+  "requestURI": "/",
+  "url": {
+    "Scheme": "",
+    "Opaque": "",
+    "User": null,
+    "Host": "",
+    "Path": "/",
+    "RawPath": "",
+    "ForceQuery": false,
+    "RawQuery": "",
+    "Fragment": "",
+    "RawFragment": ""
+  }
+}

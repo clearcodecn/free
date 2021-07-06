@@ -2,8 +2,11 @@ package updater
 
 import (
 	"context"
+	"crypto/md5"
+	"fmt"
 	"free/config"
 	"free/internal/sms/model"
+	"free/pkg/ip"
 	"free/pkg/service"
 	"github.com/sirupsen/logrus"
 	"io/ioutil"
@@ -88,6 +91,7 @@ func allToLinks(configs config.AllConfig) []*model.Link {
 			Port:       s.Port,
 			Raw:        s.Raw,
 			Type:       model.LinkTypeSS,
+			Area:       ip.GetAddress(s.Host),
 			CreateTime: time.Now(),
 		})
 	}
@@ -111,7 +115,7 @@ func allToLinks(configs config.AllConfig) []*model.Link {
 			continue
 		}
 		links = append(links, &model.Link{
-			ID:         s.Host + s.Port,
+			ID:         checksum(s.Host + s.Port),
 			Host:       s.Host,
 			Port:       s.Port,
 			Raw:        s.Raw,
@@ -131,4 +135,11 @@ func doOnce(config *Config) {
 	} else {
 		storeLastRunTime(config)
 	}
+}
+
+func checksum(m string) string {
+	x := md5.New()
+	x.Write([]byte(m))
+	a := x.Sum(nil)
+	return fmt.Sprintf("%x", a)
 }

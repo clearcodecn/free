@@ -14,5 +14,6 @@ type Link struct {
 	Port       string    `json:"port"`
 	Raw        string    `json:"raw"`
 	Type       string    `json:"type"`
+	Area       string    `json:"area"`
 	CreateTime time.Time `json:"createTime"`
 }

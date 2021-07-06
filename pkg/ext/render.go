@@ -112,6 +112,17 @@ var fm = template.FuncMap{
 		x = re2.ReplaceAllString(x, "【****】")
 		return template.HTML(x)
 	},
+	"default": func(a, b interface{}) interface{} {
+		switch v := b.(type) {
+		case string:
+			if v == "" {
+				return a
+			}
+			return b
+		default:
+			return b
+		}
+	},
 }
 
 var re = regexp.MustCompile(`\d{4,6}`)

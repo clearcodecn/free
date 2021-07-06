@@ -1,0 +1,50 @@
+{{ define "footer" }}
+    {{ $host := .Host }}
+    {{ template "footer-style" . }}
+    <footer class="footer-area section-padding-2" style="margin-top:40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-widget footer-nav">
+                        <h3> 网站管理</h3>
+                        <ul>
+                            <li><a href="/sites/policies">隐私权与条款</a></li>
+                            <li><a href="/sites/community">社区管理规定</a></li>
+                            <li><a href="/sites/help">使用帮助</a></li>
+                            <li><a href="/sites/feedback">意见反馈</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-widget footer-nav">
+                        <h3>网站导航</h3>
+                        <ul>
+                            <li><a href="/">主页</a></li>
+                            <li><a href="/sitemap.xml">网站地图</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-widget">
+                        <h3>联系我们</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="copy-text">
+                        <p>Copyright © 2016. fqfree(<a href="{{ $host }}">{{ $host }}</a>). All Rights
+                            Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+{{ end }}

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>免费梯子 | 免费翻墙 | 分享免费翻墙的网站</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-paper-plane-o fa-1x fa-flip-horizontal" aria-hidden="true"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars01"
+                aria-controls="navbars01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbars01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">关于<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">帮助<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">SS,SSR,V2ray免费账号共享</h1>
+            <h1 class="jumbotron-heading">SS,SSR,V2ray Free Accounts Share</h1>
+            <p class="lead text-muted">
+                本网站信息严禁禁止使用VPN的国家和地区使用，如有发现，一律进行IP封禁
+                <br>
+                The information of this website is strictly forbidden to use in countries and regions where VPN is
+                forbidden. If it is found, it will be blocked by IP
+            </p>
+
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="container" id="book">
+                    <h1>关于目前 GFW(墙) 的封锁方式TCP封锁(阻断)猜想</h1>
+
+<blockquote>
+<p>原文：<a href="https://doubibackup.com/wkcjzpyd-2.html">关于目前 GFW(墙) 的封锁方式TCP封锁(阻断)猜想</a> 作者：<a href="https://dbgjd.com/toyo.html">逗比</a></p>
+</blockquote>
+
+<p>对于翻墙界来说，今年真不是个顺利年。从年初的 SSR 停更并删除项目，到后来的数次大规模封禁代理服务器，甚至发展到现在已经成为日常了（GFW 2.0），几乎每天都有人的代理服务器被墙，经常听到各个群组讨论，也是。。哎！好了，说正题。</p>
+
+<h2>简单说明</h2>
+
+<p>自从今年初开始，墙的封锁方式就从<strong>全部协议封锁</strong>改为了<strong>TCP封锁(阻断)</strong>，该封锁方式主要特征为：</p>
+
+<p><strong>Ping IP正常连通(ICMP协议)，而 TCPing IP连接超时无回应(TCP协议)。</strong></p>
+
+<p>!&gt; 脑洞：这也挺好的，因为相比以前，现在可以更准确的判断服务器被墙，而不是网络、服务器问题了。 😲 <br>以前你发现代理账号连不上了，你会去 Ping ，然后发现 Ping不通，接着你会怀疑是不是网络问题、服务器问题等，然后验证半天后发现：的确是被墙了。😲<br>
+而现在，你只需要 Ping IP 一下，TCPing IP 一下，就能肯定是被墙了。😥</p>
+
+<p>基本上你测试你的服务器 IP 出现这种情况，99%的几率就是被墙了。剩下的 1% 就是防火墙没开放端口之类的配置问题。</p>
+
+<h2>TCP封锁(阻断) 简单解释：</h2>
+
+<p>当你的海外服务器 IP 被TCP封锁(阻断)后，你依然可以正常的<strong>向海外代理服务器发送数据</strong>（客户端连接服务端），但是海外代理服务器上的代理服务端在<strong>向你返回数据</strong>的时候，肯定是要经过墙的，而墙发现发送者IP(代理服务器)在黑名单中，于是就会<strong>阻断、拦截</strong>，这样你的<strong>客户端就收不到来自服务端的返回数据了</strong>（SSR上表现为：超时或空连）。</p>
+
+<p>而目前的代理软件基本都是使用 TCP 协议传输的，而TCP协议要传输数据，则先要进行握手环节，而握手自然要有来有回，所以当<strong>墙对海外代理服务器回程TCP阻断</strong>的时候，就会导致<strong>代理客户端与服务端无法完成握手</strong>，自然也无法使用代理了。</p>
+
+<h2>我认为GFW的封IP原理大概是：</h2>
+
+<p>墙是通过分析流量特征，通过各种方法、证据来判断该链接为代理的可能性，当可能性达到不同的程度时，墙做出不同的处理。<strong>假设：</strong></p>
+
+<p>|首先|墙现在都是实时扫描检测的，检测到一个链接是代理的可能性低于10%，那么就无视。|
+|:---|:---|
+|其次|检测到一个链接是<strong>代理的可能性高于10%</strong>，则将IP的相关信息（及收集的证据、特征等）记录到数据库中，当下次再发现这个链接时，继续去收集证据判断是否为代理，<strong>最后是代理的几率降低，则无视，是代理的几率增加，则进一步关注。</strong>|
+|最后|当检测到一个链接是<strong>代理的可能性高于50%</strong>的时候，可能就会考虑<strong>单独封一个端口</strong>（代理端口），这时候如果你换个端口继续做代理，那么往往很快就会所有端口被封，这就是因为墙根据你这个IP链接以往的几率判断，认为你这个IP链接是代理的可能性进一步增加，例如到了80%，所以就给你TCP所有端口封禁了。|</p>
+
+<p>其实，GFW之所以单独封一个端口，可能原因就是吃不准到底是不是代理，如果你很快就换了端口继续做代理，那么GFW就认为很大概率是代理，于是就可以封禁了。</p>
+
+<h2>如何补救</h2>
+
+<p>而目前这种非一锅端的封禁方式，让一些人脑洞大开，比如：</p>
+
+<p>|ICMP|有人把 TCP 协议数据转换为 ICMP 协议数据传输，能用，<strong>但是缺陷很明显，速度太慢了</strong>，因为协议的限制意味着速度捉急。。。|
+|:-:|:-:|
+|UDP|有人想 TCP 协议封禁了，那我可以用 UDP 呀，于是就有人尝试 TCP 协议转为 UDP 协议传输，目前这类软件都比较成熟了，以前往往都是拿来做加速或者游戏优化用的，而现在拿来正好！<br>不过国内很多运营商往往都会对** UDP QOS限速**，而想要解决 UDP QOS限速，则需要把 <strong>UDP协议 伪装成 TCP协议</strong>，然而这又是一个<strong>死循环</strong>了，TCP 协议被阻断。|</p>
+
+<p>能把TCP转为UDP的软件有：<a href="https://github.com/xtaci/kcptun">KCPTun</a>、<a href="https://github.com/dragonite-network/dragonite-java">Dragonite</a>、V2ray(自带KCP协议)。</p>
+
+<p><strong>那么除了上面说的两者有缺陷的，还有没有能复活被墙IP的服务器继续做代理呢？</strong></p>
+
+<p>有的，比如：Goflyway 的WS+CDN模式 和 <strong>8V2ray 的WS+CDN模式。</strong>这两种方法都是依赖于CDN，而想要让 CDN 来中转代理，就需要 WebSocket 技术，Goflyway V2ray 都支持 WebSocket；但光有 WebSocket+CDN 只能算复活被墙IP，无法保证 CDN IP 的安全性(被墙方面)，所以还都需要<strong>HTTP、HTTPS伪装。</strong></p>
+
+<p>所以在使用 Goflyway 时往往搭配 HTTP伪装，而使用 V2ray 时往往搭配 HTTP HTTPS伪装。这里 HTTP HTTPS伪装可不是 SS SSR 里的 <strong>伪 · HTTP HTTPS伪装</strong>，而是实实在在的网站（或者反向代理来的）。</p>
+
+<p>也就是你浏览器打开域名(这种复活方法必须有域名)<strong>会看到正常的网页</strong>，而代理客户端访问则是建立代理链接。</p>
+
+<p>?&gt; <code>注意：</code>CDN 特别是免费套餐的 CDN，国内链接速度往往不如意，如果不在意 或 当备用的可以搭建试试。</p>
+
+<h2>如何解封？</h2>
+
+<p><strong>有人又会问，IP被墙是永久的吗？会解封吗？</strong></p>
+
+<p>当然会解封，IP的数量是有限的，封一个就少一个，如果只封不解，<strong>那不成貔貅了？</strong>更何况，换位思考想一下，假设你买了一个月付的海外服务器搭建代理，因为什么原因导致被墙了，那么到期的时候，<strong>你还会续费下去等待墙解封吗？自然不会，半年付、年付同样。</strong></p>
+
+<p>既然你不会为了等待IP解封而续费下去，那么这个服务器到期后，别人在购买的时候却不一定会是搭建代理的，他可能是正常做网站什么的。</p>
+
+<p>墙考虑到 <strong>海外大量的IDC 和 国内购买海外服务器正常使用者 的体验和情绪</strong>，那就必须要定期解封。</p>
+
+<p>以前还是全协议封禁的时候，我不清楚墙的解封流程，但是今年换成 TCP协议封锁(阻断) 后，经过实验和大量网友的反馈，能猜个大概了。</p>
+
+<p>每个做代理被墙的海外服务器IP，墙都会根据不同情况设定一个<strong>解封时间</strong>（根据情况时间可能不同）。</p>
+
+<p>如果解封时间内该海外服务器IP没有向国内发送数据或者尝试建立代理连接，那么<strong>墙就会解封该IP</strong>。当然解封该IP后不代表就可以继续做代理了，根据实验和大量网友反馈，<strong>被解封的海外服务器IP，短时间内再用于代理用途，往往很快就又会封禁</strong>（非100%，另外间隔时间越长，理论再次封禁几率越低）。</p>
+
+<p>所以大家应该明白了吧？</p>
+
+<p><strong>如果你的海外服务器 IP 被TCP封禁(阻断)，那么请关闭或者删除服务器上面的代理软件（墙还可能定期对被墙IP的服务器主动探测，所以必须要关闭代理软件。），然后一段时间不理这个服务器，应该就会解封了（不是100%，而且各IP的封禁时间也可能不一样）。</strong></p>
+
+<p><strong>这时候又有人问了：我被墙的海外服务器都吃灰两个月了，怎么还没有解封？😵</strong></p>
+
+<p>这个问题除了我上面最后说过的<strong>几率问题 和 解封时间问题</strong>外，还有个可能导致该情况的原因是：<strong>你是不是有空没空就去试试代理账号能不能用？或者有事没事 TCPing 测试一下解封了没有？</strong></p>
+
+<p>这个无意的行为，可能会导致墙对你被墙的海外服务器IP <strong>重置解封时间或者说延长解封时间。</strong></p>
+
+<p>!&gt; <code>就是说：</code>当墙发现你被墙的海外服务器IP向国内发送数据或者尝试建立代理连接时，就可能会重置解封时间或延长解封时间。<br>
+<code>另外：</code>墙还可能定期对被墙IP的服务器主动探测，看看代理软件是否还在运行，所以必须要关闭代理软件。<br><br>
+<code>注意：</code>被墙IP解封后，尽量不要再做代理了，否则还是容易被墙IP。如果还要做代理，那么建议更换个代理软件，不要再用以前导致该IP被墙的代理软件了，毕竟能检测封禁一次，就能再封禁第二次，更何况你这个IP还有短时间内被墙过的前科，这更会增加被墙的几率。你要是用习惯了不想换，那么你最起码换个代理端口，至少能多活几天。。。</p>
+
+<h2>如何避免被墙</h2>
+
+<p>目前没有任何一个代理软件可以保证代理服务器IP不会被墙（emm 除了 WS+CDN+伪装），顶多减少被墙几率。以前流行的 SSR 因为已经停更大半年了，没有更新就意味着没办法抵御墙的检测，目前已经不推荐使用了。<strong>建议使用 V2ray、Brook、Goflyway 等代理软件。</strong></p>
+
+<p><strong>如果你用习惯了SSR，不想更换，那么：</strong> `</p>
+
+<p>首先 SSR 目前依然是可以正常使用的，不过在热门地区（日本、美国等）被墙几率会高一些。</p>
+
+<p>很多人都是默认只用的 HTTP HTTPS 混淆插件 ，或者客户端写个混淆参数 ，但是这样属于<strong>伪混淆</strong> ，仅仅是将流量伪装成 HTTP HTTPS 流量，并没有实体网站，所以可以被主动探测识破。</p>
+
+<p>因此，在热门地区（日本、美国等）搭建 SSR 代理的，建议要么搭配服务端的 <strong>redirect</strong> 参数做个真实网站（教程），要么就干脆用<strong>原版混淆插件（ plain ）</strong>。</p>
+
+<p>毕竟，对于可以被主动探测的伪混淆，不做混淆反而被墙几率更低，只靠协议来降低流量特征 减少被墙几率。</p>
+
+<p>除了代理软件的选择之外，服务器地区也对被墙几率有很大影响。经过实验和大量网友反馈，目前<strong>日本、美国</strong>等热门地区均是重灾区，<strong>被墙几率远高于其他较冷门地区</strong>的服务器，所以不管你当前用的是什么地区的服务器，如果该地区服务器IP频繁被墙，那么你应该考虑使用<strong>其他地区的服务器</strong>来继续搭建代理了。</p>
+
+<p>而且，不说别人，就我这半年不管自用的服务器还是我网站分享的免费代理账号服务器，美国的永远是被墙最频繁的。</p>
+
+<p>而我免费账号中的四个加拿大，都是 <strong>SSR账号( auth<em>sha1</em>v4 + tls1.2<em>ticket</em>auth 兼容原版，混淆参数什么的全都没搞)，全天24小时都有人使用，实时链接 30~80 独立IP，实时速度 1MB/s~3MB/s，就这样都没有被墙过。</strong>而美国免费账号，除了 Goflyway 的是 CDN模式，其他的都是几天就GG了。</p>
+
+<p><strong>简单来说就是：</strong></p>
+
+<p>要么搭配服务端 <strong>redirect</strong> 参数做个真实网站，要么就用<strong>原版混淆插件 plain。</strong>
+建议避开<strong>日本、美国</strong>等热门地区。</p>
+
+<p>另外，<strong>请不要或者尽量减少让国内网站(或服务器)走代理的情况出现</strong>，因为该方式会增加被墙几率。你想一下就知道了，假设你是A，代理服务器是B，你要访问的国内网站是C，那么：</p>
+
+<p><strong>A通过B访问C，那么A会向B发送数据，B向C发送数据，然后C返回数据给B，B返回数据给A。</strong></p>
+
+<p>这个过程实际上全程时间很短的，<strong>在墙看来你这个行为很符合使用代理的行为。</strong></p>
+
+<p>最后，本文你只需要关注的重点为：</p>
+
+<ul>
+<li><strong>Goflyway、V2ray 等软件可以复活被墙IP 。</strong></li>
+<li><strong>被墙IP有解封时间概念。</strong></li>
+<li><strong>被墙IP的服务器，请关闭代理软件并不理服务器一段时间，有几率解封IP。</strong></li>
+<li><strong>被墙IP解封后，如果还要做代理，请更换代理软件，否则短时间内可能还会被墙。</strong></li>
+<li><strong>墙可能会定期对被墙IP的服务器主动探测代理，所以必须关闭代理软件。</strong></li>
+<li><strong>日本 美国等热门地区服务器被墙几率更高，建议避开日本 美国热门地区。</strong></li>
+<li><strong>以上均为个人猜测（猜测+实验），不保证准确性，仅供参考。如发现不准确，请与 GFW 相关部门联系。</strong></li>
+</ul>
+
+<p>———— 本文章由 逗比根据地 战略合作伙伴 GFW 提供实验数据</p>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <span>
+                            文章列表
+                        </span>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-text">
+                            xxx
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<style>
+    .footer-area {
+        position: relative;
+        z-index: 1;
+        background: #1C2B36
+    }
+
+    .footer-area .footer-widget {
+        margin-bottom: 30px;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        margin-top: -4px;
+        font-weight: 400;
+        position: relative;
+        text-transform: capitalize
+    }
+
+    .footer-area .footer-widget p {
+        margin-bottom: 20px;
+        color: #96abbb
+    }
+
+    .footer-area .footer-widget .social a {
+        height: 35px;
+        width: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 13px;
+        text-align: center;
+        margin-right: 5px;
+        display: inline-block
+    }
+
+    .footer-area .footer-widget .social a:hover {
+        background: #2c2c54;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-nav {
+        margin-bottom: 30px
+    }
+
+    .footer-area .footer-widget.footer-nav ul {
+        padding: 0px !important;
+        margin: 0px !important;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li {
+        margin-bottom: 10px;
+        position: relative;
+        transition: 0.4s;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:last-child {
+        margin-bottom: 0
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:hover {
+        color: #73e457
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a {
+        color: #96abbb;
+        text-transform: capitalize;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        font-size: 14px
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-insta .row {
+        margin: 0 -2px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] {
+        padding: 0 2px;
+        margin-bottom: 4px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a {
+        position: relative;
+        display: block
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a img {
+        width: 100%
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        left: 0;
+        top: 0;
+        background: #4cd137;
+        opacity: 0;
+        transition: 0.4s;
+        z-index: 1
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-size: 16px;
+        content: "\f06e";
+        font-family: Fontawesome;
+        opacity: 0;
+        z-index: 2;
+        transition: 0.4s
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover::before {
+        opacity: 0.8
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover:after {
+        opacity: 1
+    }
+
+    .copyright {
+        background: #263845;
+        color: #96abbb;
+        padding: 20px 0;
+        font-size: 14px
+    }
+
+    .copyright .copy-text p {
+        margin: 0
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-text {
+            text-align: center;
+            margin-bottom: 15px
+        }
+    }
+
+    .copyright .copy-nav ul {
+        margin: 0;
+        float: right
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-nav ul {
+            float: none;
+            text-align: center
+        }
+    }
+
+    .copyright .copy-nav ul li {
+        display: inline-block;
+        margin: 0 8px
+    }
+
+    .copyright .copy-nav ul li a {
+        color: #96abbb;
+        font-size: 14px
+    }
+
+    .copyright .copy-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .section-padding-2 {
+        padding-top: 50px;
+        padding-bottom: 20px
+    }
+
+    .grecaptcha-badge {
+        visibility: hidden
+    }
+</style>
+
+<footer class="footer-area section-padding-2" style="margin-top:40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3> 网站管理</h3>
+                    <ul>
+                        <li><a href="/sites/policies">隐私权与条款</a></li>
+                        <li><a href="/sites/community">社区管理规定</a></li>
+                        <li><a href="/sites/help">使用帮助</a></li>
+                        <li><a href="/sites/feedback">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3>网站导航</h3>
+                    <ul>
+                        <li><a href="/">主页</a></li>
+                        <li><a href="/sitemap.xml">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget">
+                    <h3>联系我们</h3>
+                    <p>email: <a href="mailto: admin@fqfree.xyz">admin@fqfree.xyz</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="copy-text">
+                    <p>Copyright © 2016. fqfree(<a href="//127.0.0.1:9100">//127.0.0.1:9100</a>). All Rights
+                        Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

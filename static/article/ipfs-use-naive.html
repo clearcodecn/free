@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>免费梯子 | 免费翻墙 | 分享免费翻墙的网站</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-paper-plane-o fa-1x fa-flip-horizontal" aria-hidden="true"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars01"
+                aria-controls="navbars01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbars01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">关于<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">帮助<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">SS,SSR,V2ray免费账号共享</h1>
+            <h1 class="jumbotron-heading">SS,SSR,V2ray Free Accounts Share</h1>
+            <p class="lead text-muted">
+                本网站信息严禁禁止使用VPN的国家和地区使用，如有发现，一律进行IP封禁
+                <br>
+                The information of this website is strictly forbidden to use in countries and regions where VPN is
+                forbidden. If it is found, it will be blocked by IP
+            </p>
+
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="container" id="book">
+                    <h1>IPFS简单使用</h1>
+
+<h2>前言</h2>
+
+<p>在看了读者的邮箱来信后，确实，若是被勒令这不可抗拒的因素删除仓库也是毫无办法；何况，我也是各种担心也因其他缘由与相关操作不当导致删除重建好几次该书项目，而这次就需要着手使用ipfs这类去中心化的网络应用了。</p>
+
+<p>这其中也遇到一些问题就是上传文件后，关闭了ipfs的进程，其他人却无法有效访问这个站点了。为此特意搜索相关相关问题内容，找到了一个合理的解释：</p>
+
+<blockquote>
+<p>我还特意找了一个VM安装ipfs，并添加同样内容（&quot;hello world&quot;）的文件到ipfs，发现hash是一样的。相信全球大量的人员在测试ipfs时都可能会使用&quot;hello world&quot;作为文件内容。</p>
+
+<p>所以当访问地址<code>https://ipfs.io/ipfs/QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o</code>时，访问的不见得是你自己的电脑上的这个hello.txt文件，除非这个文件的内容独特到全球只有你的电脑上有。</p>
+
+<p>文档<code>https://ipfs.io/ipfs/QmXZXP8QRMG7xB4LDdKeRL5ZyZGZdhxkkLUSqoJDV1WRAp</code>的内容比较独特，恐怕只有我自己的电脑上有，如果我不开机并启动ipfs进程，估计别人访问不了。</p>
+
+<p>—— 摘自 <a href="https://github.com/wbwangk/wbwangk.github.io/wiki/IPFS">王伟兵的博客</a></p>
+</blockquote>
+
+<p>也就是说，打不开对方提供的已发布在网上的IPFS节点链接，很可能是资源仅他独有且关闭了ipfs的进程。</p>
+
+<h2>安装</h2>
+
+<p>打开<a href="https://ipfs.io/docs/install/">ipfs</a>，选择<a href="https://ipfs.io/docs/getting-started/">getting started with ipfs</a></p>
+
+<!-- ![](https://ipfs.io/ipfs/QmVqhqctR8HaHEaLBsT8oCy5u2cDWH3xp5nWSgCjMGJTJJ?0.png) -->
+
+<p><img src="https://i.postimg.cc/Y0SyFZ1Z/2018-05-27-092613.png" alt="" /></p>
+
+<p><a href="https://ipfs.io/docs/getting-started/">install ipfs now</a></p>
+
+<!-- ![](https://ipfs.io/ipfs/QmT8nWpg14T2Vts7LRWiNMi4ZcXd3q96DYAYq8cFB3vF5j?2.png) -->
+
+<p><img src="https://i.postimg.cc/vHg0dWXr/2018-05-27-093125.png" alt="" /></p>
+
+<p><a href="https://dist.ipfs.io/#go-ipfs">download ipfs for your platorm</a></p>
+
+<!-- ![](https://ipfs.io/ipfs/QmTDGnkpwcuN6tQjnP7R7XpTjLxr9MXwGYKBBbAqXN7ako?3.png) -->
+
+<p><img src="https://i.postimg.cc/fLqfGL9q/2018-05-27-093548.png" alt="" /></p>
+
+<p>点击即可下载</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmSTjFqRHEjtW6LWYmE9eLy2YRGjKUmUQgX8JznX6N28Ui?2.png) -->
+
+<p><img src="https://i.postimg.cc/XvVKXFKD/2018-05-27-093946.png" alt="" /></p>
+
+<p>解压并用CLI进入当前文件夹，输入<code>ipfs.exe init</code>完成初始化操作</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmbAL6HMqHTc8stSxQRhowh5WBcVEiW4i4NsmTe6hcjS78?4.png) -->
+
+<p><img src="https://i.postimg.cc/0yCWt9cF/2018-05-27-095305.png" alt="" /></p>
+
+<p><code>ipfs.exe daemon</code>开启守护进程</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmRQf6jx8U9VeFfu2gr8T7JhQX5zRdSPgaWmF7BipWrjvn?0.png) -->
+
+<p><img src="https://i.postimg.cc/D0s51hSC/2018-05-27-095836.png" alt="" /></p>
+
+<p>输入<code>http://localhost:5001/webui</code>进入主界面，在<code>connection</code>版块中可以看到全球共有267个节点，这一数字也是动态变化的</p>
+
+<!-- ![](https://ipfs.io/ipfs/Qmf2iphYYZbzoZXisJB6rfGTdEU5MGzRwbPLaoobzA1Nkt?2.png) -->
+
+<p><img src="https://i.postimg.cc/T2rrjCkH/2018-05-27-100854.png" alt="" /></p>
+
+<h2>上传文件</h2>
+
+<p>在<code>files</code>版块中点击<code>create folder</code>创建文件夹，目前除图片外，若要正确上传文件，必须用文件夹的<code>hash</code>加载</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmTWV2wo9on5oqgcgQq5N4hRyfLrNY3RXgcvtGfE13Shjb?2.png) -->
+
+<p><img src="https://i.postimg.cc/vZpBNdT7/2018-05-27-113127.png" alt="" /></p>
+
+<p>选择需要上传的文件，右键<code>copy hash</code>，转到DAG板块中粘贴进输入框GO</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmUMhW3H3ApEPihJs9gHxfAG1SExeyUuWZtoM2VmtCpQz7?3.png) -->
+
+<p><img src="https://i.postimg.cc/qq5068Cc/2018-05-27-114055.png" alt="" /></p>
+
+<!-- ![](https://ipfs.io/ipfs/QmeoED47NpN6HHEkiSnz4Mt32XJpoWtX1AQDuC1LaojUA8?2.png) -->
+
+<p><img src="https://i.postimg.cc/dQbJF9wv/2018-05-27-114452.png" alt="" /></p>
+
+<p>将如上hash连接复制，并在前面加上<code>htttps://ipfs.io</code></p>
+
+<!-- ![](https://ipfs.io/ipfs/QmRAbdqGsKiZjScrztkftxx9XTArenE8toKkvCZfLhvP8M?3.png) -->
+
+<p><img src="https://i.postimg.cc/BvVdgqvs/2018-05-27-114812.png" alt="" /></p>
+
+<p>hash链接始终是太长了，就需要使用<a href="https://tinyurl.com/">tinyURL</a>生成短链接</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmfSA2veGGcndSWXpmxhn3zBNux4i1JMHv8Wm3fRr9nmbz?3.png) -->
+
+<p><img src="https://i.postimg.cc/QCrY4VZL/2018-05-27-120243.png" alt="" /></p>
+
+<p>测试</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmVTmfExQdvVjrosgsmqKT5hk4wABW756V7pA6YcoN9hCu?2.png) -->
+
+<p><img src="https://i.postimg.cc/9f7B6Vpc/2018-05-27-121017.png" alt="" /></p>
+
+<p>你愿意把它当作无限存储的网盘也可以，只不过任何人包括你在内不能删除它罢了；速度的话，聊天群、问答社区以及贴吧各种宣传，人多了应该自然也就会快一些。</p>
+
+<h2>部署静态网站</h2>
+
+<p>在这里我已预先提供了一份基于gitbook生成的静态网站文件夹</p>
+
+<!-- ![](https://ipfs.io/ipfs/Qmf337dkc4u8Vvz3afx6hVQwDutSagkEh1nPW7dRtSCpEC?2.png) -->
+
+<p><img src="https://i.postimg.cc/J4FZMvt0/2018-05-27-164203.png" alt="" /></p>
+
+<p>命令行定位到文件夹的上层文件夹，执行<code>ipfs add -r web-book</code>上传整个目录</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmYAHqw57WUfvTyLEd8EgAVE6gN38ykrZJg1bV7ci5z4de?0.png) -->
+
+<p><img src="https://i.postimg.cc/X7BXcJ7N/2018-05-27-171923.png" alt="" /></p>
+
+<p><code>web-book</code>文件夹的指令输出的最后一行的哈希值，就是你的网站的根目录</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmSqfSqZCjZ2BGr75sK816cRGHksoESnYK8CPXfg6cjKUF?2.png) -->
+
+<p><img src="https://i.postimg.cc/fLkMz2VW/2018-05-27-172511.png" alt="" /></p>
+
+<p>复制最后一行的hash值</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmcP41JKtYrq7TuS3pdU2Hmh5zpTQsDKdmniFgQyJcgwb9?4.png) -->
+
+<p><img src="https://i.postimg.cc/VkD6zbKR/2018-05-27-173142.png" alt="" /></p>
+
+<p>输入<code>localhost:8080/ipfs</code>后面追加已复制的哈希值即可</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmW7yPmdmZXPanUrDfVFm7C38TjdB3B3gMWQXjXoU2iCf4?1.png) -->
+
+<p><img src="https://i.postimg.cc/G2YdTBx6/2018-05-27-173114.png" alt="" /></p>
+
+<p>虽数据已添加到当前的ipfs节点中，但是并没有同步到ipfs网络；此时还只是离线部署，现在要将它发布在互联网上。</p>
+
+<p>运行了<code>ipfs add -r</code> 的指令的窗口不要关闭，新建一个cmd命令行窗口，进入ipfs文件夹再输入<code>ipfs.exe daemon</code>便发布成功了</p>
+
+<p><img src="https://i.postimg.cc/mrC5Q7K3/2018-05-27-175819.png" alt="" /></p>
+
+<p>测试</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmdPPXYVMJ2JTMFChQbdQy2eApMiD6Dr763s27YD46n35b?3.png) -->
+
+<p><img src="https://i.postimg.cc/3wXtyYDn/2018-05-27-181051.png" alt="" /></p>
+
+<h2>IPNS同步更新</h2>
+
+<p>由于去中心化的缘故，一但上传也就不能更改了，为此需要ipns的新目录以及节点id映射在新的hash值，用户只需访问<code>ipfs.io/ipns/节点id</code>查看相关的更新，也就是说以前的<code>ipfs.io/ipfs/目录hash值</code>被废弃了；这也看出来去中心化一个弊端就是产生大量垃圾，虽然链接很长很长...</p>
+
+<p>为了演示方便在<code>book.json</code>文件中添加了新的插件，并再次使用了<code>ipfs add -r web-book</code>指令使其生成新的hash值。</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmUokTS9iEMAvcBf2r4AuGXkgHzmoC97LuPLtnS3Tc3miz?4.png) -->
+
+<p><img src="https://i.postimg.cc/YSR1K9FK/2018-05-27-213304.png" alt="" /></p>
+
+<p>使用<code>ipfs name publish</code>后面跟上站点根目录的hash值进行发布操作</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmPrEGfXt53aZdXwkRgPC9qFLaziKZKXjy2sXgXQmTDdPk?2.png) -->
+
+<p><img src="https://i.postimg.cc/65Z1vDg2/2018-05-27-220829.png" alt="" /></p>
+
+<p>使用<code>ifps id</code>查看节点id</p>
+
+<!-- ![](https://ipfs.io/ipfs/Qma7Ww1tWrrdX4aauMqYueeNnhuXR1Ms16JDkDCcSofYM1?1.png) -->
+
+<p><img src="https://i.postimg.cc/ZqWN9hsX/2018-05-27-221733.png" alt="" /></p>
+
+<p><code>ipfs name resolve</code>后面追加已查到的节点id</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmaL3MCdyBbBS5n5X2sweyMj1pKW2UgZka4jY9rSQKtd3F?0.png) -->
+
+<p><img src="https://i.postimg.cc/ZRhqTkG8/2018-05-27-222850.png" alt="" /></p>
+
+<p>此时，已经可以本地访问了，<code>localhost:8080/ipns/节点id</code></p>
+
+<!-- ![](https://ipfs.io/ipfs/QmULUBN4wRUSQ5NquDxXwAyvGuXogymDBCbQbXQsB8BhvR?1.png) -->
+
+<p><img src="https://i.postimg.cc/Zn54RJVd/2018-05-27-223735.png" alt="" /></p>
+
+<p>关掉之前的使用<code>ipfs daemon</code>指令的窗口，再打开命令行窗口重新运行该指令即可，由于访问人数不多再加上GFW的干扰，可能会很慢。</p>
+
+<p>测试</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmUe1eWwnUFPDpjiSu75Gyv3QxpaHm8Xb2aVJMmuydwXxk?2.png) -->
+
+<p><img src="https://i.postimg.cc/qMY4JVnN/2018-05-27-225417.png" alt="" /></p>
+
+<h2>备份</h2>
+
+<p>备份这很重要，但也很简单，在<code>C:\Users\lorem\.ipfs</code>下找到<code>config</code>文件并将其拷贝至云盘即可，lorem是我的用户名</p>
+
+<!-- ![](https://ipfs.io/ipfs/QmWdvB4mskcD6oPEWJLHB16JspxxdSQh9uog4JoaSgUR2v?3.png) -->
+
+<p><img src="https://i.postimg.cc/xTkVFx7n/2018-05-27-232208.png" alt="" /></p>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <span>
+                            文章列表
+                        </span>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-text">
+                            xxx
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<style>
+    .footer-area {
+        position: relative;
+        z-index: 1;
+        background: #1C2B36
+    }
+
+    .footer-area .footer-widget {
+        margin-bottom: 30px;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        margin-top: -4px;
+        font-weight: 400;
+        position: relative;
+        text-transform: capitalize
+    }
+
+    .footer-area .footer-widget p {
+        margin-bottom: 20px;
+        color: #96abbb
+    }
+
+    .footer-area .footer-widget .social a {
+        height: 35px;
+        width: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 13px;
+        text-align: center;
+        margin-right: 5px;
+        display: inline-block
+    }
+
+    .footer-area .footer-widget .social a:hover {
+        background: #2c2c54;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-nav {
+        margin-bottom: 30px
+    }
+
+    .footer-area .footer-widget.footer-nav ul {
+        padding: 0px !important;
+        margin: 0px !important;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li {
+        margin-bottom: 10px;
+        position: relative;
+        transition: 0.4s;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:last-child {
+        margin-bottom: 0
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:hover {
+        color: #73e457
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a {
+        color: #96abbb;
+        text-transform: capitalize;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        font-size: 14px
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-insta .row {
+        margin: 0 -2px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] {
+        padding: 0 2px;
+        margin-bottom: 4px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a {
+        position: relative;
+        display: block
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a img {
+        width: 100%
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        left: 0;
+        top: 0;
+        background: #4cd137;
+        opacity: 0;
+        transition: 0.4s;
+        z-index: 1
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-size: 16px;
+        content: "\f06e";
+        font-family: Fontawesome;
+        opacity: 0;
+        z-index: 2;
+        transition: 0.4s
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover::before {
+        opacity: 0.8
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover:after {
+        opacity: 1
+    }
+
+    .copyright {
+        background: #263845;
+        color: #96abbb;
+        padding: 20px 0;
+        font-size: 14px
+    }
+
+    .copyright .copy-text p {
+        margin: 0
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-text {
+            text-align: center;
+            margin-bottom: 15px
+        }
+    }
+
+    .copyright .copy-nav ul {
+        margin: 0;
+        float: right
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-nav ul {
+            float: none;
+            text-align: center
+        }
+    }
+
+    .copyright .copy-nav ul li {
+        display: inline-block;
+        margin: 0 8px
+    }
+
+    .copyright .copy-nav ul li a {
+        color: #96abbb;
+        font-size: 14px
+    }
+
+    .copyright .copy-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .section-padding-2 {
+        padding-top: 50px;
+        padding-bottom: 20px
+    }
+
+    .grecaptcha-badge {
+        visibility: hidden
+    }
+</style>
+
+<footer class="footer-area section-padding-2" style="margin-top:40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3> 网站管理</h3>
+                    <ul>
+                        <li><a href="/sites/policies">隐私权与条款</a></li>
+                        <li><a href="/sites/community">社区管理规定</a></li>
+                        <li><a href="/sites/help">使用帮助</a></li>
+                        <li><a href="/sites/feedback">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3>网站导航</h3>
+                    <ul>
+                        <li><a href="/">主页</a></li>
+                        <li><a href="/sitemap.xml">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget">
+                    <h3>联系我们</h3>
+                    <p>email: <a href="mailto: admin@fqfree.xyz">admin@fqfree.xyz</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="copy-text">
+                    <p>Copyright © 2016. fqfree(<a href="//127.0.0.1:9100">//127.0.0.1:9100</a>). All Rights
+                        Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

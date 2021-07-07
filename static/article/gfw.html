@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>免费梯子 | 免费翻墙 | 分享免费翻墙的网站</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-paper-plane-o fa-1x fa-flip-horizontal" aria-hidden="true"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars01"
+                aria-controls="navbars01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbars01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">关于<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">帮助<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">SS,SSR,V2ray免费账号共享</h1>
+            <h1 class="jumbotron-heading">SS,SSR,V2ray Free Accounts Share</h1>
+            <p class="lead text-muted">
+                本网站信息严禁禁止使用VPN的国家和地区使用，如有发现，一律进行IP封禁
+                <br>
+                The information of this website is strictly forbidden to use in countries and regions where VPN is
+                forbidden. If it is found, it will be blocked by IP
+            </p>
+
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="container" id="book">
+                    <h1>GFW原理和封锁技术</h1>
+
+<blockquote>
+<p>原文：<a href="https://xuranus.github.io/2017/10/09/GFW%E5%8E%9F%E7%90%86%E5%92%8C%E5%B0%81%E9%94%81%E6%8A%80%E6%9C%AF">GFW原理和封锁技术</a>&emsp;作者：<a href="https://xuranus.github.io/">XUranus</a></p>
+</blockquote>
+
+<p>GFW是Great Fire Wall的缩写，即“长城防火墙”。这个工程由若干个部分组成，实现不同功能。长城防火墙主要指TG监控和过滤互联网内容的软硬件系统，由服务器和路由器等设备，加上相关的应用程序所构成。</p>
+
+<p>首先，需要强调的是，由于中国网络审查广泛，中国国内含有“不合适”内容的的网站，会受到政府直接的行政干预，被要求自我审查、自我监管，乃至关闭，所以GFW的主要作用在于分析和过滤中国境内外网络的资讯互相访问。GFW对网络内容的过滤和分析是双向的，GFW不仅针对国内读者访问中国境外的网站进行干扰，也干扰国外读者访问主机在中国大陆的网站。</p>
+
+<h2>一 关键字过滤阻断</h2>
+
+<p>关键字过滤系统。此系统能够从出口网关收集分析信息，过滤、嗅探指定的关键字。主要针对HTTP的默认端口：80端口，因为HTTP传播的内容是明文的内容，没有经过加密，而GFW是一个IDS(Intrusion detection system)。普通的关键词如果出现在HTTP请求报文的头部(如“Host: www.youtube.com”)时，则会马上伪装成对方向连接两端的计算机发送RST包(reset)干扰两者正常的TCP连接，进而使请求的内容无法继续查看。如果GFW在数据流中发现了特殊的内文关键词(如轮子，达赖等)时，其也会试图打断当前的连接，从而有时会出现网页开启一部分后突然停止的情况。在任何阻断发生后，一般在随后的90秒内同一IP地址均无法浏览对应IP地址相同端口上的内容。</p>
+
+<h2>二 IP地址封锁</h2>
+
+<p>IP地址封锁是GFW通过路由器来控制的，在通往国外的最后一个网关上加上一条伪造的路由规则，导致通往某些被屏蔽的网站的所有IP数据包无法到达。路由器的正常工作方式是学习别的路由器广播的路由规则，遇到符合已知的IP转发规则的数据包，则按已经规则发送，遇到未知规则IP的数据，则转发到上一级网关。</p>
+
+<p>而GFW对于境外(中国大陆以外)的XX网站会采取独立IP封锁技术。然而部分XX网站使用的是由虚拟主机服务提供商提供的多域名、单(同)IP的主机托管服务，这就会造成了封禁某个IP地址，就会造成所有使用该服务提供商服务的其它使用相同IP地址服务器的网站用户一同遭殃，就算是正常的网站，也不能幸免。其中的内容可能并无不当之处，但也不能在中国大陆正常访问。现在GFW通常会将包含XX信息的网站或网页的URL加入关键字过滤系统，并可以防止民众透过普通海外HTTP代理服务器进行访问。</p>
+
+<h2>三 特定端口封锁</h2>
+
+<p>GFW会丢弃特定IP地址上特定端口的所有数据包，使该IP地址上服务器的部分功能(如SSH的22、VPN的1723或SSL的443端口等)无法在中国大陆境内正常使用。</p>
+
+<p>在中国移动、中国联通等部分ISP(手机IP段)，所有的PPTP类型的VPN都被封锁。</p>
+
+<p>2011年3月起，GFW开始对Google部分服务器的IP地址实施自动封锁(按时间段)某些端口，按时段对www.google.com(用户登录所有Google服务时需此域名加密验证)和mail.google.com的几十个IP地址的443端口实施自动封锁，具体是每10或15分钟可以连通，接着断开，10或15分钟后再连通，再断开，如此循环，令中国大陆用户和Google主机之间的连接出现间歇性中断，使其各项服务出现问题。GFW这样的封锁手法很高明，因为Gmail并非被完全阻断，这令问题看上去好像出自Google本身。这就是你们认为Google抽风的原因。</p>
+
+<h2>四 SSL连接阻断</h2>
+
+<p>GFW会阻断特定网站的SSL加密连接，方法是通过伪装成对方向连接两端的计算机发送RST包(RESET)干扰两者间正常的TCP连接，进而打断与特定IP地址之间的SSL(HTTPS，443端口)握手(如Gmail、Google文件、Google网上论坛等的SSL加密连接)，从而导致SSL连接失败。</p>
+
+<p>当然由于SSL本身的特点，这并不意味着与网站传输的内容可被破译。</p>
+
+<h2>五 DNS劫持和污染</h2>
+
+<p>GFW主要采用DNS劫持和污染技术，使用Cisco提供的IDS系统来进行域名劫持，防止访问被过滤的网站，2002年Google被封锁期间其域名就被劫持到百度。中国部分ISP也会通过此技术插入广告。</p>
+
+<p>对于含有多个IP地址或经常变更IP地址逃避封锁的域名，GFW通常会使用此方法进行封锁。具体方法是当用户向DNS服务器提交域名请求时，DNS返回虚假(或不解析)的IP地址。</p>
+
+<p>全球一共有13组根域名服务器(Root Server)，目前中国大陆有F、I这2个根域DNS镜像，但现在均已因为多次DNS污染外国网络，而被断开与国际互联网的连接。</p>
+
+<p>DNS劫持和污染是针对某些网站的最严重的干扰。</p>
+
+<p>干扰的方式有两种：</p>
+
+<p>一种是通过网络服务提供商(Internet Service Provider)提供的DNS服务器进行DNS欺骗，当人们访问某个网站时，需要要把域名转换为一个IP地址，DNS服务器负责将域名转换为IP地址，中国大陆的ISP接受通信管理局的屏蔽网站的指令后在DNS服务器里加入某些特定域名的虚假记录，当使用此DNS服务器的网络用户访问此特定网站时，DNS服务便给出虚假的IP地址，导致访问网站失败，甚至返回ISP运营商提供的出错页面和广告页面。</p>
+
+<p>另一种是GFW在DNS查询使用的UDP的53端口上根据blacklist进行过滤，遇到通往国外的使用UDP53端口进行查询的DNS请求，就返回一个虚假的IP地址。</p>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <span>
+                            文章列表
+                        </span>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-text">
+                            xxx
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<style>
+    .footer-area {
+        position: relative;
+        z-index: 1;
+        background: #1C2B36
+    }
+
+    .footer-area .footer-widget {
+        margin-bottom: 30px;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        margin-top: -4px;
+        font-weight: 400;
+        position: relative;
+        text-transform: capitalize
+    }
+
+    .footer-area .footer-widget p {
+        margin-bottom: 20px;
+        color: #96abbb
+    }
+
+    .footer-area .footer-widget .social a {
+        height: 35px;
+        width: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 13px;
+        text-align: center;
+        margin-right: 5px;
+        display: inline-block
+    }
+
+    .footer-area .footer-widget .social a:hover {
+        background: #2c2c54;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-nav {
+        margin-bottom: 30px
+    }
+
+    .footer-area .footer-widget.footer-nav ul {
+        padding: 0px !important;
+        margin: 0px !important;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li {
+        margin-bottom: 10px;
+        position: relative;
+        transition: 0.4s;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:last-child {
+        margin-bottom: 0
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:hover {
+        color: #73e457
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a {
+        color: #96abbb;
+        text-transform: capitalize;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        font-size: 14px
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-insta .row {
+        margin: 0 -2px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] {
+        padding: 0 2px;
+        margin-bottom: 4px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a {
+        position: relative;
+        display: block
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a img {
+        width: 100%
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        left: 0;
+        top: 0;
+        background: #4cd137;
+        opacity: 0;
+        transition: 0.4s;
+        z-index: 1
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-size: 16px;
+        content: "\f06e";
+        font-family: Fontawesome;
+        opacity: 0;
+        z-index: 2;
+        transition: 0.4s
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover::before {
+        opacity: 0.8
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover:after {
+        opacity: 1
+    }
+
+    .copyright {
+        background: #263845;
+        color: #96abbb;
+        padding: 20px 0;
+        font-size: 14px
+    }
+
+    .copyright .copy-text p {
+        margin: 0
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-text {
+            text-align: center;
+            margin-bottom: 15px
+        }
+    }
+
+    .copyright .copy-nav ul {
+        margin: 0;
+        float: right
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-nav ul {
+            float: none;
+            text-align: center
+        }
+    }
+
+    .copyright .copy-nav ul li {
+        display: inline-block;
+        margin: 0 8px
+    }
+
+    .copyright .copy-nav ul li a {
+        color: #96abbb;
+        font-size: 14px
+    }
+
+    .copyright .copy-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .section-padding-2 {
+        padding-top: 50px;
+        padding-bottom: 20px
+    }
+
+    .grecaptcha-badge {
+        visibility: hidden
+    }
+</style>
+
+<footer class="footer-area section-padding-2" style="margin-top:40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3> 网站管理</h3>
+                    <ul>
+                        <li><a href="/sites/policies">隐私权与条款</a></li>
+                        <li><a href="/sites/community">社区管理规定</a></li>
+                        <li><a href="/sites/help">使用帮助</a></li>
+                        <li><a href="/sites/feedback">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3>网站导航</h3>
+                    <ul>
+                        <li><a href="/">主页</a></li>
+                        <li><a href="/sitemap.xml">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget">
+                    <h3>联系我们</h3>
+                    <p>email: <a href="mailto: admin@fqfree.xyz">admin@fqfree.xyz</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="copy-text">
+                    <p>Copyright © 2016. fqfree(<a href="//127.0.0.1:9100">//127.0.0.1:9100</a>). All Rights
+                        Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

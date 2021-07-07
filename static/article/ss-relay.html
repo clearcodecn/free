@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>免费梯子 | 免费翻墙 | 分享免费翻墙的网站</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-paper-plane-o fa-1x fa-flip-horizontal" aria-hidden="true"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars01"
+                aria-controls="navbars01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbars01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">关于<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">帮助<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">SS,SSR,V2ray免费账号共享</h1>
+            <h1 class="jumbotron-heading">SS,SSR,V2ray Free Accounts Share</h1>
+            <p class="lead text-muted">
+                本网站信息严禁禁止使用VPN的国家和地区使用，如有发现，一律进行IP封禁
+                <br>
+                The information of this website is strictly forbidden to use in countries and regions where VPN is
+                forbidden. If it is found, it will be blocked by IP
+            </p>
+
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="container" id="book">
+                    <h1>SS二级（前置）代理设置</h1>
+
+<blockquote>
+<p>原文：<a href="https://www.itengli.com/ss-relay/">SS二级（前置）代理设置实现中转加速观看BBC iPlayer</a> 作者：<a href="https://www.itengli.com">夏天</a></p>
+</blockquote>
+
+<p>有些时候，我们的shadowsocks代理直连速度比较慢。例如，我们想要用英国代理来观看BBC iPlayer，如果直接用shadowsocks连接英国节点，在很多网络下速度并不理想。这个时候，如果我们有其他节点速度非常快，比如香港节点（阿里云）、维也纳节点等，就可以利用这些速度快的代理作为中转，加速我们的目标代理的连接速度。在这里，我们以维也纳节点作为前置代理，以英国节点作为目标代理来说明一下如何用shadowsocks实现中转。原理如下图：</p>
+
+<p><img src="https://i.loli.net/2019/06/06/5cf8d8e90b7b017028.png" alt="" /></p>
+
+<p>了解原理之后，下面的设置就很简单了。
+第一，由于需要两个代理，你需要同时打开两个shadowsocks客户端，所以，你要需要复制一份。为了避免冲突，请将两个客户端分别放入两个不同的文件夹内。
+第二，先打开一个客户端，连接维也纳节点。（系统代理模式选择不修改系统（IE）代理）
+第三，再打开另外一个客户端，此时会提醒你端口被占用，先点击确定，连接伦敦节点。端口占用的原因是shadowsocks默认本地端口都是1080，两个同时打开必然会冲突。所以你需要修改这一个客户端的本地端口为1081（可以任意选择端口，只要不和其他程序占用相同端口即可）。同时填写二级（前置）代理信息。这部分参数设置为：右键小飞机→选项设置 。 请参照下图填写：</p>
+
+<p><img src="https://i.loli.net/2019/06/06/5cf8d9178597669922.png" alt="" /></p>
+
+<p>第四，启用这个伦敦节点客户端代理就行了（这里系统代理模式选择全局模式） ，然后就大功告成了！
+打开 https://www.bbc.co.uk/iplayer 测试：</p>
+
+<p><img src="https://i.loli.net/2019/06/06/5cf8d983a308d69299.png" alt="" /></p>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <span>
+                            文章列表
+                        </span>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-text">
+                            xxx
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<style>
+    .footer-area {
+        position: relative;
+        z-index: 1;
+        background: #1C2B36
+    }
+
+    .footer-area .footer-widget {
+        margin-bottom: 30px;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        margin-top: -4px;
+        font-weight: 400;
+        position: relative;
+        text-transform: capitalize
+    }
+
+    .footer-area .footer-widget p {
+        margin-bottom: 20px;
+        color: #96abbb
+    }
+
+    .footer-area .footer-widget .social a {
+        height: 35px;
+        width: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 13px;
+        text-align: center;
+        margin-right: 5px;
+        display: inline-block
+    }
+
+    .footer-area .footer-widget .social a:hover {
+        background: #2c2c54;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-nav {
+        margin-bottom: 30px
+    }
+
+    .footer-area .footer-widget.footer-nav ul {
+        padding: 0px !important;
+        margin: 0px !important;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li {
+        margin-bottom: 10px;
+        position: relative;
+        transition: 0.4s;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:last-child {
+        margin-bottom: 0
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:hover {
+        color: #73e457
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a {
+        color: #96abbb;
+        text-transform: capitalize;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        font-size: 14px
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-insta .row {
+        margin: 0 -2px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] {
+        padding: 0 2px;
+        margin-bottom: 4px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a {
+        position: relative;
+        display: block
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a img {
+        width: 100%
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        left: 0;
+        top: 0;
+        background: #4cd137;
+        opacity: 0;
+        transition: 0.4s;
+        z-index: 1
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-size: 16px;
+        content: "\f06e";
+        font-family: Fontawesome;
+        opacity: 0;
+        z-index: 2;
+        transition: 0.4s
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover::before {
+        opacity: 0.8
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover:after {
+        opacity: 1
+    }
+
+    .copyright {
+        background: #263845;
+        color: #96abbb;
+        padding: 20px 0;
+        font-size: 14px
+    }
+
+    .copyright .copy-text p {
+        margin: 0
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-text {
+            text-align: center;
+            margin-bottom: 15px
+        }
+    }
+
+    .copyright .copy-nav ul {
+        margin: 0;
+        float: right
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-nav ul {
+            float: none;
+            text-align: center
+        }
+    }
+
+    .copyright .copy-nav ul li {
+        display: inline-block;
+        margin: 0 8px
+    }
+
+    .copyright .copy-nav ul li a {
+        color: #96abbb;
+        font-size: 14px
+    }
+
+    .copyright .copy-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .section-padding-2 {
+        padding-top: 50px;
+        padding-bottom: 20px
+    }
+
+    .grecaptcha-badge {
+        visibility: hidden
+    }
+</style>
+
+<footer class="footer-area section-padding-2" style="margin-top:40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3> 网站管理</h3>
+                    <ul>
+                        <li><a href="/sites/policies">隐私权与条款</a></li>
+                        <li><a href="/sites/community">社区管理规定</a></li>
+                        <li><a href="/sites/help">使用帮助</a></li>
+                        <li><a href="/sites/feedback">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3>网站导航</h3>
+                    <ul>
+                        <li><a href="/">主页</a></li>
+                        <li><a href="/sitemap.xml">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget">
+                    <h3>联系我们</h3>
+                    <p>email: <a href="mailto: admin@fqfree.xyz">admin@fqfree.xyz</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="copy-text">
+                    <p>Copyright © 2016. fqfree(<a href="//127.0.0.1:9100">//127.0.0.1:9100</a>). All Rights
+                        Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

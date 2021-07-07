@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>免费梯子 | 免费翻墙 | 分享免费翻墙的网站</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-paper-plane-o fa-1x fa-flip-horizontal" aria-hidden="true"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars01"
+                aria-controls="navbars01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbars01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">关于<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">帮助<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">SS,SSR,V2ray免费账号共享</h1>
+            <h1 class="jumbotron-heading">SS,SSR,V2ray Free Accounts Share</h1>
+            <p class="lead text-muted">
+                本网站信息严禁禁止使用VPN的国家和地区使用，如有发现，一律进行IP封禁
+                <br>
+                The information of this website is strictly forbidden to use in countries and regions where VPN is
+                forbidden. If it is found, it will be blocked by IP
+            </p>
+
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="container" id="book">
+                    <h1>代理上网准入检测实验</h1>
+
+<p>情景：按照代理软件默认的安装方式，登录帐号连接节点发现软件报错，并提示乱码，软件日志难以找到，去切实排查原因...第一想法是软件字符编码及兼容性问题，可win7、win10测试无效，即使设置了UTF-8编码，情况依旧；从以前经验想当然认为“乱码不影响使用（连接、功能逻辑操作）”，这个时候也是一头雾水。</p>
+
+<p><img src="https://i.loli.net/2020/12/15/MXQB5KS8s4UgnDi.png" alt="image-20201215112132923.png" /></p>
+
+<p>在这个时候联系了售后才了解到不能含特殊字符、空格的目录如常见的：</p>
+
+<p><code>cmd
+C:\Program Files
+C:\Program Files (x86)
+</code></p>
+
+<p>....O__O &quot;…，按照软件说明安装，登录连接服务器确实成功的。虽然连接成功，但访问Google还是被阻断了有些异常，联系了厂商客服，他们也表示他们的提供服务器没有问题，页面空白如下图现象...为了临时能让同事连接上网，使用ss连接依旧如此。（该图为过程复盘）</p>
+
+<p><img src="https://i.loli.net/2020/12/03/o81uC4zR6LipQYd.jpg" alt="Catch_12-03-11-39-37_.jpg" /></p>
+
+<p>然而在管理员主机这边却是可以的，这又是怎么回事呢？</p>
+
+<p><img src="https://i.loli.net/2020/12/03/QtNTdDCWUV4BAMO.png" alt="image-20201203114350647.png" /></p>
+
+<p><strong>初步了解</strong>原来是上网帐号权限问题，管理员访问网站是不受限的；所带来的疑问点是为什么实验同学明明勾选了代理工具，但用代理工具却又访问不了Google这般类型的搜索页面呢？</p>
+
+<p>防火墙对代理、VPN程序的协议识别机制有关，由于年限原因一些新型代理、VPN使用新型的协议导致无法识别相关的代理工具，也是存在这种可能性。</p>
+
+<p><img src="https://i.loli.net/2020/12/03/K5FiSZtICswgycp.png" alt="2020-12-03_120742.png" /></p>
+
+<p><strong>通过深入发现</strong>设置LAN-&gt;WAN并制定端口范围的访问方式，限制代理、VPN翻墙。</p>
+
+<p><img src="https://i.loli.net/2020/12/03/1PbhsDdxj3nKwQE.png" alt="2020-12-03_121845.png" /></p>
+
+<p>不在上图中准入系统设置的端口范围内的实验同学，该同学代理界面节点端口信息如下。</p>
+
+<p><img src="https://i.loli.net/2020/12/05/KI65dAZFyeWDaOm.png" alt="089EF.png" /></p>
+
+<p>所以这就是此次访问异常的原因所在；泛泛来说，学校学生一般有百来个，不同专业班级也有十几个左右及以上，根据相关需求也得制定不同的上网规则。将上网规则集合在一起组成策略，将各组的上网行为规范应用于策略，极大方便了对校园学生的上网行为管理。</p>
+
+<p><strong>浏览器页面的启用端口疑惑</strong></p>
+
+<p>深信服访问准入设备的开放端口限制，浏览器所打开的各个站点是是否端口各不相同？于是参考<a href="https://www.zhihu.com/question/401686199">知乎-浏览器对于每个网页会使用不同的端口号吗？</a>的两篇回答得出结论：</p>
+
+<p>各个站点的网址服务器端口不会变，默认设置443、80，加端口号都是额外设置的；客户端，也就是我们的浏览器 ，本质上是启用多个独立程序打开相应所访问的多个页面，与此同时， 也就有了相应进程与多个端口。并不是访问各个网址的端口各不相同。</p>
+
+<h2>代理上网逻辑网络</h2>
+
+<p>大家对我校学生及组织难以理解，也是，那么我就以毕业的社会人视角比方吧，最开始用户是通过互联网联系到能够直连外网的代理商访问外网</p>
+
+<p><img src="https://i.loli.net/2020/12/03/4kM5mL2Dyv9IWhQ.png" alt="image-20201203142709439.png" /></p>
+
+<p>用户与代理商双方建立连接关系，也是需要相互之间信任验证的，不建立信任验证，谁都可以建立连接就乱套了。于是就有了客户端与服务器端完成帐号登录与密码验证这一过程。建立信任关系后，代理商就如同用户的下手助理，接代用户的意愿去完成一系列的行为操作。</p>
+
+<p>代理上网拓扑流程如下：</p>
+
+<p><img src="https://i.loli.net/2020/12/03/TjZLyhg1vBxuAVs.png" alt="image-20201203162752377.png" /></p>
+
+<h3>附：网页代理原理</h3>
+
+<p>网页代理服务器又称为在线代理或者叫线上代理，是一种在网页上运行的代理服务器程序，其不用任何设置，输入网址选择好代理服务器便可以访问的优点已经成为时下最流行的代理访问方式。网页代理是常见的一种代理程序。网页代理给客户端提供远程网站上的网页和文件的高速缓存，使客户端可以更加快速安全的浏览远程网站。一些网页代理网站保持每天更新以保证速度。</p>
+
+<p>浏览器客户端提交网址的时候，代理程序开始在当前服务器寻找远程网站的缓存网页和网站，找到目标网站后，代理程序马上将网站数据返回到用户的浏览器客户端；如果当前服务器没有该远程服务器的缓存，代理程序则会自动读取远程网站，将远程网站的资料提交给客户端，同时将资料缓存提供给下一次的浏览需求。</p>
+
+<p>代理程序会根据缓存的时间、大小和提取记录自动删除缓存。删除的方法有两种，一种是删除保存最久的资料，一种是删除最少提取的缓存。这两种方法也可以结合使用。</p>
+
+<p><img src="https://i.loli.net/2020/12/15/6TeZqCQ3c2gxous.png" alt="2018-05-10-192753.png" /></p>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <span>
+                            文章列表
+                        </span>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-text">
+                            xxx
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<style>
+    .footer-area {
+        position: relative;
+        z-index: 1;
+        background: #1C2B36
+    }
+
+    .footer-area .footer-widget {
+        margin-bottom: 30px;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        margin-top: -4px;
+        font-weight: 400;
+        position: relative;
+        text-transform: capitalize
+    }
+
+    .footer-area .footer-widget p {
+        margin-bottom: 20px;
+        color: #96abbb
+    }
+
+    .footer-area .footer-widget .social a {
+        height: 35px;
+        width: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 13px;
+        text-align: center;
+        margin-right: 5px;
+        display: inline-block
+    }
+
+    .footer-area .footer-widget .social a:hover {
+        background: #2c2c54;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-nav {
+        margin-bottom: 30px
+    }
+
+    .footer-area .footer-widget.footer-nav ul {
+        padding: 0px !important;
+        margin: 0px !important;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li {
+        margin-bottom: 10px;
+        position: relative;
+        transition: 0.4s;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:last-child {
+        margin-bottom: 0
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:hover {
+        color: #73e457
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a {
+        color: #96abbb;
+        text-transform: capitalize;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        font-size: 14px
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-insta .row {
+        margin: 0 -2px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] {
+        padding: 0 2px;
+        margin-bottom: 4px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a {
+        position: relative;
+        display: block
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a img {
+        width: 100%
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        left: 0;
+        top: 0;
+        background: #4cd137;
+        opacity: 0;
+        transition: 0.4s;
+        z-index: 1
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-size: 16px;
+        content: "\f06e";
+        font-family: Fontawesome;
+        opacity: 0;
+        z-index: 2;
+        transition: 0.4s
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover::before {
+        opacity: 0.8
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover:after {
+        opacity: 1
+    }
+
+    .copyright {
+        background: #263845;
+        color: #96abbb;
+        padding: 20px 0;
+        font-size: 14px
+    }
+
+    .copyright .copy-text p {
+        margin: 0
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-text {
+            text-align: center;
+            margin-bottom: 15px
+        }
+    }
+
+    .copyright .copy-nav ul {
+        margin: 0;
+        float: right
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-nav ul {
+            float: none;
+            text-align: center
+        }
+    }
+
+    .copyright .copy-nav ul li {
+        display: inline-block;
+        margin: 0 8px
+    }
+
+    .copyright .copy-nav ul li a {
+        color: #96abbb;
+        font-size: 14px
+    }
+
+    .copyright .copy-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .section-padding-2 {
+        padding-top: 50px;
+        padding-bottom: 20px
+    }
+
+    .grecaptcha-badge {
+        visibility: hidden
+    }
+</style>
+
+<footer class="footer-area section-padding-2" style="margin-top:40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3> 网站管理</h3>
+                    <ul>
+                        <li><a href="/sites/policies">隐私权与条款</a></li>
+                        <li><a href="/sites/community">社区管理规定</a></li>
+                        <li><a href="/sites/help">使用帮助</a></li>
+                        <li><a href="/sites/feedback">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3>网站导航</h3>
+                    <ul>
+                        <li><a href="/">主页</a></li>
+                        <li><a href="/sitemap.xml">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget">
+                    <h3>联系我们</h3>
+                    <p>email: <a href="mailto: admin@fqfree.xyz">admin@fqfree.xyz</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="copy-text">
+                    <p>Copyright © 2016. fqfree(<a href="//127.0.0.1:9100">//127.0.0.1:9100</a>). All Rights
+                        Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

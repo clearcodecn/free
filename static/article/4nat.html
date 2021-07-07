@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>免费梯子 | 免费翻墙 | 分享免费翻墙的网站</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-paper-plane-o fa-1x fa-flip-horizontal" aria-hidden="true"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars01"
+                aria-controls="navbars01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbars01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">关于<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">帮助<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">SS,SSR,V2ray免费账号共享</h1>
+            <h1 class="jumbotron-heading">SS,SSR,V2ray Free Accounts Share</h1>
+            <p class="lead text-muted">
+                本网站信息严禁禁止使用VPN的国家和地区使用，如有发现，一律进行IP封禁
+                <br>
+                The information of this website is strictly forbidden to use in countries and regions where VPN is
+                forbidden. If it is found, it will be blocked by IP
+            </p>
+
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="container" id="book">
+                    <h1>NAT类型科普及一些简单提升方法</h1>
+
+<blockquote>
+<p>原文：<a href="http://www.right.com.cn/forum/thread-199299-1-1.html">NAT类型科普及一些简单提升NAT类型的方法</a>&emsp;作者：iSkyun</p>
+</blockquote>
+
+<p>首先百度了解到什么是“<a href="http://baike.baidu.com/item/nat"><strong>NAT</strong></a>”，看了那么多我们大概也知其一些的基本知识，比如说<a href="http://baike.baidu.com/item/nat"><strong>定义</strong></a>、<a href="http://baike.baidu.com/item/nat#1"><strong>功能</strong></a>、<a href="http://baike.baidu.com/item/nat#2"><strong>实现方式</strong></a>及<a href="http://baike.baidu.com/item/nat#7"><strong>类型</strong></a></p>
+
+<p>提升NAT类型的好处：</p>
+
+<ul>
+<li>浏览网页、观看视频、游戏等更顺畅，下载速度更稳定快速，<br /></li>
+<li>特别是对那些玩ED2K/PT下载、PS4/XBox主机游戏的，<br /></li>
+<li>提升NAT类型后更有可能获取到HigtID、更容易进入游戏房间连线等。<br />
+<br /></li>
+</ul>
+
+<p>要提升NAT类型，我们必须知道NAT的4个类型它们分别对应：</p>
+
+<ul>
+<li>**NAT1 **→ <strong>Full Cone</strong>&emsp;  NAT1这是最宽松的网络环境，你想做什么</li>
+<li>**NAT2 **→ <strong>Address-Restricted Cone</strong> &emsp;浏览网页与游戏及下载都没过多限制</li>
+<li>**NAT3 **→ <strong>Port-Restricted Cone</strong> &emsp;同上，但游戏厂商会限制此NAT类型的联机</li>
+<li>**NAT4 **→ <strong>Symmetric</strong> &emsp;这是最严格的网络环境，可能会玩不了游戏、下载都没速度
+<br /></li>
+</ul>
+
+<p>说些比较重要的前话，路由器少一层是一层，这样越有可能得到NAT1和NAT2这两类NAT类型，一般建议家里的网路是以下两种拓扑类型：<br />
+1. 光猫桥接→主路由（拨号连接外网用）→副路由（纯AP模式，扩展信号）<br />
+2. 光猫拨号（直接充当主路由）→副路由（纯AP模式，扩展信号）</p>
+
+<p>这样的好处是桥接和纯AP是不进行NAT的，而是SWitch，所以不会导致多一层NAT。</p>
+
+<p>现在个别网络游戏严格要求你的网络环境必须是<strong>NAT2</strong>或以上才能进行游戏。而你的网络环境又是NAT3及NAT4,那到底该怎么办呢？下面我们介绍一些简单提升NAT类型的方法，其实就是进行<a href="http://baike.baidu.com/item/nat#3_3"><strong>NAT穿透</strong></a></p>
+
+<ul>
+<li><p>路由器有启用<strong>Full Cone、STUN、TURN、ICE、uPnP</strong>等功能都果断启用了；若没有该换了，因为<strong>uPnP</strong>基本是标配</p></li>
+
+<li><p>一般建议有Full Cone、uPnP等就不要开DMZ了，除非你是PS4/XBox这类游戏主机要提升NAT类型</p></li>
+
+<li><p>如果没有以上功能，那可以找下有没有<strong><a href="http://baike.baidu.com/item/dmz">DMZ</a></strong>功能并启用它，将你要提升NAT类型的主机IP地址设置好。</p></li>
+
+<li><p>在Windows上把以下三个服务设置为自动启动，并启动该服务：</p>
+
+<ul>
+<li>SSDP Discovery<br /></li>
+<li>Function Discovery Provider Host<br /></li>
+<li>Function Discovery Resource Publication<br />
+<br /></li>
+</ul></li>
+
+<li><p>在Windows防火墙，放行你需要提升NAT类型的软件或者游戏程序，也可以直接关闭</p></li>
+
+<li><p>如果你的设备是通过电脑共享网络的形式上网的，建议把这个服务也打开：</p>
+
+<ul>
+<li>UPnP Device Host<br /></li>
+</ul></li>
+</ul>
+
+<p>以上能弄的都弄了，网络环境就会越好甚至NAT1都没有问题。这是我通过以上设置，进行NAT穿透+公网IP一枚。</p>
+
+<p>测得的结果：</p>
+
+<p><img src="https://i.postimg.cc/NFMFQtKC/132059dd4rfiilqz4e4s4p.jpg" alt="" /></p>
+
+<!-- ![](https://ipfs.io/ipfs/QmZNLVAGW4wUrd1qpRKhj4JzXei9PhKJ7z9HTnjvp3qYbw?0.jpg)    -->
+
+<!-- ![](http://www.right.com.cn/forum/data/attachment/forum/201611/10/132059dd4rfiilqz4e4s4p.jpg)   -->
+
+<p>最后附上NAT类型测试工具：</p>
+
+<p><img src="https://i.postimg.cc/257n6z5C/zip.gif" alt="" /> <a href="http://down7.pc6.com/xy3/NatTypeTester.zip">NAT类型测试.zip</a></p>
+
+<!-- ![](http://www.right.com.cn/forum/static/image/filetype/zip.gif) [NAT类型测试.zip](http://www.right.com.cn/forum/plugin.php?id=imc_attachad:ad&aid=MTQzODYzfDQxMGQxODFmfDE1MjU4MzkxMjZ8MHwxOTkyOTk%3D)  -->
+
+<p>PS:<br />
+如果能找运营商要到外网IP，这是最好的；没有公网IP的话，可以打电话给客服态度强硬点、最好一开始就把客服的工号也要了并说“我家宽带怎么没公网IP啊，我需在家里装远程监控，没有公网IP的话不行，如果不给我公网IP，我只好退宽带换别家的了，不给就投诉你”；但如果还是要不到公网IP，能提升到NAT2也不错了。</p>
+
+<p>还有一种最笨的就是直接电脑拨号上网，Windows 直接把防火墙关了，只要你的是公网IP，妥妥的NAT1。想要提升PS4/XBox这类游戏主机的NAT类型，建议以上能做的都做了。</p>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <span>
+                            文章列表
+                        </span>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-text">
+                            xxx
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<style>
+    .footer-area {
+        position: relative;
+        z-index: 1;
+        background: #1C2B36
+    }
+
+    .footer-area .footer-widget {
+        margin-bottom: 30px;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        margin-top: -4px;
+        font-weight: 400;
+        position: relative;
+        text-transform: capitalize
+    }
+
+    .footer-area .footer-widget p {
+        margin-bottom: 20px;
+        color: #96abbb
+    }
+
+    .footer-area .footer-widget .social a {
+        height: 35px;
+        width: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 13px;
+        text-align: center;
+        margin-right: 5px;
+        display: inline-block
+    }
+
+    .footer-area .footer-widget .social a:hover {
+        background: #2c2c54;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-nav {
+        margin-bottom: 30px
+    }
+
+    .footer-area .footer-widget.footer-nav ul {
+        padding: 0px !important;
+        margin: 0px !important;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li {
+        margin-bottom: 10px;
+        position: relative;
+        transition: 0.4s;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:last-child {
+        margin-bottom: 0
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:hover {
+        color: #73e457
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a {
+        color: #96abbb;
+        text-transform: capitalize;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        font-size: 14px
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-insta .row {
+        margin: 0 -2px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] {
+        padding: 0 2px;
+        margin-bottom: 4px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a {
+        position: relative;
+        display: block
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a img {
+        width: 100%
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        left: 0;
+        top: 0;
+        background: #4cd137;
+        opacity: 0;
+        transition: 0.4s;
+        z-index: 1
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-size: 16px;
+        content: "\f06e";
+        font-family: Fontawesome;
+        opacity: 0;
+        z-index: 2;
+        transition: 0.4s
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover::before {
+        opacity: 0.8
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover:after {
+        opacity: 1
+    }
+
+    .copyright {
+        background: #263845;
+        color: #96abbb;
+        padding: 20px 0;
+        font-size: 14px
+    }
+
+    .copyright .copy-text p {
+        margin: 0
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-text {
+            text-align: center;
+            margin-bottom: 15px
+        }
+    }
+
+    .copyright .copy-nav ul {
+        margin: 0;
+        float: right
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-nav ul {
+            float: none;
+            text-align: center
+        }
+    }
+
+    .copyright .copy-nav ul li {
+        display: inline-block;
+        margin: 0 8px
+    }
+
+    .copyright .copy-nav ul li a {
+        color: #96abbb;
+        font-size: 14px
+    }
+
+    .copyright .copy-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .section-padding-2 {
+        padding-top: 50px;
+        padding-bottom: 20px
+    }
+
+    .grecaptcha-badge {
+        visibility: hidden
+    }
+</style>
+
+<footer class="footer-area section-padding-2" style="margin-top:40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3> 网站管理</h3>
+                    <ul>
+                        <li><a href="/sites/policies">隐私权与条款</a></li>
+                        <li><a href="/sites/community">社区管理规定</a></li>
+                        <li><a href="/sites/help">使用帮助</a></li>
+                        <li><a href="/sites/feedback">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3>网站导航</h3>
+                    <ul>
+                        <li><a href="/">主页</a></li>
+                        <li><a href="/sitemap.xml">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget">
+                    <h3>联系我们</h3>
+                    <p>email: <a href="mailto: admin@fqfree.xyz">admin@fqfree.xyz</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="copy-text">
+                    <p>Copyright © 2016. fqfree(<a href="//127.0.0.1:9100">//127.0.0.1:9100</a>). All Rights
+                        Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

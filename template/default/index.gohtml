@@ -8,7 +8,8 @@
             <p class="lead text-muted">
                 本网站信息严禁禁止使用VPN的国家和地区使用，如有发现，一律进行IP封禁
                 <br>
-                The information of this website is strictly forbidden to use in countries and regions where VPN is forbidden. If it is found, it will be blocked by IP
+                The information of this website is strictly forbidden to use in countries and regions where VPN is
+                forbidden. If it is found, it will be blocked by IP
             </p>
             <!--<p>
                 <a href="#" class="btn btn-primary my-2">查看项目 &raquo;</a>
@@ -19,51 +20,74 @@
 
     <div class="container">
         <div class="row">
-            {{ range .list }}
-            <div class="col-md-4 col-sm-6">
-                <div class="card mb-4 box-shadow">
-                   <div class="card-header">
+            <div class="col-md-9">
+                <div class="container-fluid">
+                    <div class="row">
+                        {{ range .list }}
+                            <div class="col-md-6">
+                                <div class="card mb-4 box-shadow">
+                                    <div class="card-header">
                         <span>
                             {{ .Area | default "未知地区"}}
                         </span>
-                       <span class="badge badge-success" style="float: right">
+                                        <span class="badge badge-success" style="float: right">
                             有效
+                        </span>
+                                    </div>
+                                    <!--<img class="card-img-top" th:src="@{/createQRCode(width=350,height=350,text=${ssrd.link})}"/>-->
+                                    <div class="card-body">
+                                        <!--<h4 class="card-title">Card title</h4>-->
+                                        <div class="card-text">
+                                            <dl class="row">
+                                                <dt class="col-md-3 col-sm-4">状态</dt>
+                                                <dd class="col-md-9 col-sm-8">
+                                                    更新时间:
+                                                    <span class="badge badge-success">
+                                        {{ .CreateTime | moment }}
+                                    </span>
+                                                </dd>
+                                                <dt class="col-md-3 col-sm-4">地址</dt>
+                                                <dd class="col-md-9 col-sm-8">
+                                                    <span>{{ .Host }}</span>
+                                                </dd>
+                                                <dt class="col-md-3 col-sm-4">端口</dt>
+                                                <dd class="col-md-9 col-sm-8">
+                                                    <span>{{ .Port }}</span>
+                                                </dd>
+                                                <dt class="col-md-3 col-sm-4">协议</dt>
+                                                <dd class="col-md-9 col-sm-8">
+                                                    <span>{{ .Type }}</span>
+                                                </dd>
+                                            </dl>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <a href="#" class="btn btn-block  btn-success">查看详情</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--<div class="card-footer"></div>-->
+                                </div>
+                            </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <span>
+                            文章列表
                         </span>
                     </div>
                     <!--<img class="card-img-top" th:src="@{/createQRCode(width=350,height=350,text=${ssrd.link})}"/>-->
                     <div class="card-body">
                         <!--<h4 class="card-title">Card title</h4>-->
                         <div class="card-text">
-                            <dl class="row">
-                                <dt class="col-md-3 col-sm-4">状态</dt>
-                                <dd class="col-md-9 col-sm-8">
-                                    更新时间:
-                                    <span class="badge badge-success">
-                                        {{ .CreateTime | moment }}
-                                    </span>
-                                </dd>
-                                <dt class="col-md-3 col-sm-4">地址</dt>
-                                <dd class="col-md-9 col-sm-8">
-                                    <span>{{ .Host }}</span>
-                                </dd>
-                                <dt class="col-md-3 col-sm-4">端口</dt>
-                                <dd class="col-md-9 col-sm-8">
-                                    <span>{{ .Port }}</span>
-                                </dd>
-                                <dt class="col-md-3 col-sm-4">协议</dt>
-                                <dd class="col-md-9 col-sm-8">
-                                    <span>{{ .Type }}</span>
-                                </dd>
-                            </dl>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="#" class="btn btn-block  btn-success">查看详情</a>
-                            </div>
+                            xxx
                         </div>
                     </div>
                     <!--<div class="card-footer"></div>-->
                 </div>
             </div>
-            {{ end }}
         </div>
     </div>
     <!-- /container -->

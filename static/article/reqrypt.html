@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>免费梯子 | 免费翻墙 | 分享免费翻墙的网站</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-paper-plane-o fa-1x fa-flip-horizontal" aria-hidden="true"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars01"
+                aria-controls="navbars01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbars01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">关于<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">帮助<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">SS,SSR,V2ray免费账号共享</h1>
+            <h1 class="jumbotron-heading">SS,SSR,V2ray Free Accounts Share</h1>
+            <p class="lead text-muted">
+                本网站信息严禁禁止使用VPN的国家和地区使用，如有发现，一律进行IP封禁
+                <br>
+                The information of this website is strictly forbidden to use in countries and regions where VPN is
+                forbidden. If it is found, it will be blocked by IP
+            </p>
+
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="container" id="book">
+                    <h1>Reqrypt</h1>
+
+<p>!&gt; 目前，reqrypt由于软件原理构造无法应对墙大的处理机制，在国内已经没有使用它的必要了；不过，在其他网络审查不像中国那么严格的地区，常搭配着DNSCrypt一起使用进行穿墙。</p>
+
+<blockquote>
+<p>编译原文：<a href="https://github.com/basil00/reqrypt">basil00/reqrypt</a></p>
+</blockquote>
+
+<p>ReQrypt是一种隧道和加密Web浏览器请求的工具，可以将它们从本地（例如路由器级别或ISP级别）窥探和拦截中隐藏起来。ReQrypt可用于绕过ISP级别的URL审查/过滤/日志记录系统。</p>
+
+<p>ReQrypt的工作方式与其他旁路方法完全不同。ReQrypt基于称为“三角路由”的技术。简而言之，ReQrypt的工作原理是这样的：</p>
+
+<p><code>text
+(1) Tunneled request      +----------------+      (2) Forwarded request
+           +-------------&gt;| ReQrypt server |-------------+
+           |              +----------------+             |
+           |                                             |
+           |                                             V
+   +----------------+                             +----------------+
+   | PC web browser |&lt;----------------------------|   Web server   |
+   +----------------+                             +----------------+
+                        (3) Web-page response
+</code></p>
+
+<p>基本上：</p>
+
+<ol>
+<li>您的Web浏览器向Web服务器发出一个HTTP请求，该请求被加密并隧道传输到ReQrypt服务器</li>
+<li>ReQrypt服务器解密隧道数据包，并将其转发给网络服务器</li>
+<li>Web服务器响应HTTP请求，就好像它直接来自您的计算机，并且网页响应通过正常路由发回</li>
+</ol>
+
+<p>通常，HTTP请求直接发送到Web服务器未加密；这意味着它可能会被如您的ISP、工作场所或共享家庭路由器读取或拦截。但在使用ReQrypt时，传出的HTTP请求会被加密并隧道传输，使得它们无法被任何本地窃听者读取。</p>
+
+<p>对于只攻击出站HTTP请求并忽略入站HTTP响应的系统，ReQrypt是有效的。这种系统非常常见的是ISP级别的审查和日志记录系统，因为处理URL流量（HTTP请求）比处理网页响应要容易得多。</p>
+
+<p>最后，与VPN或代理、Tor等不同，ReQrypt不是一个匿名工具。它不会更改隧道数据包的IP地址。这可能是件好事：它意味着Web响应直接发送到您的PC，这意味着ReQrypt通常比其他系统更快。</p>
+
+<blockquote>
+<p>图表来源：<a href="https://reqrypt.org/reqrypt.html">reqrypt官网</a></p>
+</blockquote>
+
+<p>| Filter/Proxy | ReQrypt? | Explanation |
+| --- | --- | --- |
+| DNS poisoning | ✗ | ReQrypt is overkill for DNS poisoning. Instead reconfigure your system to use a different DNS server, such as <a href="https://developers.google.com/speed/public-dns/">Google Public DNS</a>. |
+| DNS blocking | ✓ | This occurs when your provider blocks access to alternative DNS servers. In this case reconfigure your system to use a different DNS server then run ReQrypt with Hiding modeset to &quot;Off&quot; and &quot;DNS Hiding&quot; enabled. |
+| IP address blocking | ✓ | Provider blocks certain IP addresses. Use ReQrypt with &quot;Active-Highest&quot; mode enabled. |
+| Proxy-ing | ✓ | Provider forces all HTTP traffic through proxy servers. In some cases ReQrypt can completely bypass the proxy servers with &quot;Active-Highest&quot; mode enabled. |
+| Hybrid proxy-ing | ✓ | Provider forces some HTTP traffic through proxy servers based on IP address. As above use ReQrypt with &quot;Active-Highest&quot; mode enabled. |
+| Hybrid filtering | ✓ | Provider blocks access to certain URLs at the Network level using Deep Packet Inspection (DPI). For Network-level filtering only the URLs need to be hidden. Use ReQrypt with &quot;Passive&quot;, &quot;Active-Low&quot; or &quot;Active-Medium&quot; modes enabled. |
+| Mirror filtering | ✓ | This is similar to hybrid filtering except the provider copies (mirrors) rather than selectively redirects packets. As above, use ReQrypt with &quot;Passive&quot;, &quot;Active-Low&quot; or &quot;Active-Medium&quot; modes enabled. |
+| URL sniffing | ✓ | Provider is sniffing packets to extract URLs for logging or data-retention purposes. User ReQrypt with &quot;Active-Medium&quot; mode enabled. |
+| Strong filtering | ✗ | The various strong filtering methods used in countries like China or Iran. ReQrypt is generally ineffective against such systems since they typically block or severely restrict inbound traffic. |</p>
+
+<blockquote>
+<p>编译原文：<a href="https://github.com/basil00/reqrypt/issues/15#issuecomment-363946075">issues#15</a></p>
+</blockquote>
+
+<p>ReQrypt是一种特殊的技术（单向隧道技术），而且这项技术（大部分）对检测入境流量的强大过滤系统（如在中国和伊朗部署的那些过滤系统）无效。</p>
+
+<p>在多数其他地区，由于政策不同的原因，检查入站流量在ISP级别是不常见的，即：跟踪TCP状态的成本，Web响应流量高，Web响应流量中没有URL，以及基于IP愚蠢的方法进行大规模过度阻塞。但在中国和伊朗等地，他们愿意为此付出代价。</p>
+
+<p>我也听说过一些传闻，ReQrypt确实对中国的一些ISP有效，以及伊朗还做了一些额外的伎俩。据报道，除了审查HTTP之外，还会限制非HTTP流量以阻止规避工具。像<a href="https://github.com/BarbaTunnelCoder/BarbaTunnel/">BarbaTunnel</a>这样的项目通过HTTP隧道传输以获得全速。</p>
+
+<p>要通过双向隧道强制所有流量，这对ReQrypt来说将是一个不同的项目。这更像是<a href="https://github.com/basil00/TorWall">Tallow</a>所做的，它是一种通过Tor网络强制所有流量的工具。Tallow可能适用于其他类型的隧道，特别是支持Socks5的任何东西。</p>
+
+<blockquote>
+<p>编译原文：<a href="https://github.com/basil00/reqrypt/issues/27#issuecomment-394153872">issues#27</a></p>
+</blockquote>
+
+<p>是的，见<a href="https://github.com/basil00/reqrypt/issues/15">#15</a>。ReQrypt从未设计为规避“严格”ISP级过滤器，主动监控入站和出站流量。ReQrypt主要用于在许多国家（包括英国等西方国家）普遍使用更轻量级的基于URL黑名单过滤；因为他们也不希望降低互联网的性能，所以重量级的双向过滤通常是一个禁忌。</p>
+
+<p>对于中国与伊朗的用户，建议基于双向隧道技术寻找更强大的规避技术并保护匿名。</p>
+
+<!-- 
+!> 目前，reqrypt由于软件原理构造无法应对墙大的处理机制，在国内已经没有使用它的必要了；不过，在其他网络审查不像中国那么严格的地区，常搭配着DNSCrypt一起使用进行穿墙。<br><br>
+至于barbaTunnel已有多年没更新了，再加上VPN服务器可能自身存在些许问题，使得这款软件不怎么好用；我测试了一下也不是很满意，直白的说就是连接OpenVPN的操作并不成功。<br><br>
+所以，关于这些软件与其所涉及到的一些科学上网相关方面的知识，做个了解也就行了
+ -->
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <span>
+                            文章列表
+                        </span>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-text">
+                            xxx
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<style>
+    .footer-area {
+        position: relative;
+        z-index: 1;
+        background: #1C2B36
+    }
+
+    .footer-area .footer-widget {
+        margin-bottom: 30px;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        margin-top: -4px;
+        font-weight: 400;
+        position: relative;
+        text-transform: capitalize
+    }
+
+    .footer-area .footer-widget p {
+        margin-bottom: 20px;
+        color: #96abbb
+    }
+
+    .footer-area .footer-widget .social a {
+        height: 35px;
+        width: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 13px;
+        text-align: center;
+        margin-right: 5px;
+        display: inline-block
+    }
+
+    .footer-area .footer-widget .social a:hover {
+        background: #2c2c54;
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-nav {
+        margin-bottom: 30px
+    }
+
+    .footer-area .footer-widget.footer-nav ul {
+        padding: 0px !important;
+        margin: 0px !important;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li {
+        margin-bottom: 10px;
+        position: relative;
+        transition: 0.4s;
+        list-style: none
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:last-child {
+        margin-bottom: 0
+    }
+
+    .footer-area .footer-widget.footer-nav ul li:hover {
+        color: #73e457
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a {
+        color: #96abbb;
+        text-transform: capitalize;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        font-size: 14px
+    }
+
+    .footer-area .footer-widget.footer-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .footer-area .footer-widget.footer-insta .row {
+        margin: 0 -2px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] {
+        padding: 0 2px;
+        margin-bottom: 4px
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a {
+        position: relative;
+        display: block
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a img {
+        width: 100%
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        left: 0;
+        top: 0;
+        background: #4cd137;
+        opacity: 0;
+        transition: 0.4s;
+        z-index: 1
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-size: 16px;
+        content: "\f06e";
+        font-family: Fontawesome;
+        opacity: 0;
+        z-index: 2;
+        transition: 0.4s
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover::before {
+        opacity: 0.8
+    }
+
+    .footer-area .footer-widget.footer-insta .row [class*="col"] a:hover:after {
+        opacity: 1
+    }
+
+    .copyright {
+        background: #263845;
+        color: #96abbb;
+        padding: 20px 0;
+        font-size: 14px
+    }
+
+    .copyright .copy-text p {
+        margin: 0
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-text {
+            text-align: center;
+            margin-bottom: 15px
+        }
+    }
+
+    .copyright .copy-nav ul {
+        margin: 0;
+        float: right
+    }
+
+    @media (max-width: 767px) {
+        .copyright .copy-nav ul {
+            float: none;
+            text-align: center
+        }
+    }
+
+    .copyright .copy-nav ul li {
+        display: inline-block;
+        margin: 0 8px
+    }
+
+    .copyright .copy-nav ul li a {
+        color: #96abbb;
+        font-size: 14px
+    }
+
+    .copyright .copy-nav ul li a:hover {
+        color: #ffffff
+    }
+
+    .section-padding-2 {
+        padding-top: 50px;
+        padding-bottom: 20px
+    }
+
+    .grecaptcha-badge {
+        visibility: hidden
+    }
+</style>
+
+<footer class="footer-area section-padding-2" style="margin-top:40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3> 网站管理</h3>
+                    <ul>
+                        <li><a href="/sites/policies">隐私权与条款</a></li>
+                        <li><a href="/sites/community">社区管理规定</a></li>
+                        <li><a href="/sites/help">使用帮助</a></li>
+                        <li><a href="/sites/feedback">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget footer-nav">
+                    <h3>网站导航</h3>
+                    <ul>
+                        <li><a href="/">主页</a></li>
+                        <li><a href="/sitemap.xml">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-widget">
+                    <h3>联系我们</h3>
+                    <p>email: <a href="mailto: admin@fqfree.xyz">admin@fqfree.xyz</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="copy-text">
+                    <p>Copyright © 2016. fqfree(<a href="//127.0.0.1:9100">//127.0.0.1:9100</a>). All Rights
+                        Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
